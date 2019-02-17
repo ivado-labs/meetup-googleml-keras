@@ -101,8 +101,8 @@ As for the pre-processing you can launch the Jupyter Notebook server with the fo
 ```
 ./scripts/launch_notebooks.sh
 ```
-Then launch your favorite browser and connect to `http://localhost:8888`
+Then launch your favorite browser and connect to `http://localhost:8888`.  
 All the Python files used for the model are accessible as the directory `src/python` has been added to the Python 
 path of the notebook.
-You can then predict locally by copying the selected weights locally and loading the model as illustrated in the 
-`reseult_analysis` notebook.
+You can then predict locally by copying the selected weights locally and loading the model as illustrated 
+in the notebook.
