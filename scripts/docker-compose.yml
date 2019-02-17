@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  notebooks:
+    container_name: notebooks
+    image: jupyter/tensorflow-notebook
+    ports:
+      - 8888:8888
+    command: start.sh jupyter notebook --NotebookApp.token=''
+    volumes:
+      - ${PWD}/src/notebooks:/home/jovyan/work
+      - ${PWD}/src/python:/home/jovyan/python
+      - ${PWD}/output:/home/jovyan/output
+      - ${HOME}/.config/gcloud/:/home/jovyan/gcloud
+    environment:
+      - JUPYTER_LAB_ENABLE=yes
+      - PYTHONPATH=/home/jovyan/python
+      - GOOGLE_APPLICATION_CREDENTIALS=/home/jovyan/gcloud/application_default_credentials.json
+  tensorboard:
+    container_name: tensorboard
+    image: jupyter/tensorflow-notebook
+    ports:
+      - 6006:6006
+    command: tensorboard --logdir=${LOG_PATH_TB}
+    volumes:
+      - ${HOME}/.config/gcloud/:/home/jovyan/gcloud
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/home/jovyan/gcloud/application_default_credentials.json
