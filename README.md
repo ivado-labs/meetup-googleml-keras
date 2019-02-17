@@ -35,6 +35,13 @@ You can run the following command to switch to your project:
 gcloud config set project project-name
 ```
 
+### Dataset
+The dataset presented can be found on [Kaggle](https://www.kaggle.com/jannesklaas/kerasseedlings).  
+Any dataset where the images are organised by directory having the class label should work.
+If not, the file `dataset.py` will need to be adapted.  
+The dataset needs to be uploaded on the Google Storage bucket and the scripts need to be adapted accordingly 
+(`scripts/*.sh`, `trainer.py` and the notebook). 
+
 ## Preprocessing
 You can prepare your Python files to access and pre-process the data needed to train the model.
 Launch the Jupyter Notebook server with the following command:
