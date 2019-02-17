@@ -1,0 +1,5 @@
+tensorflow
+opencv-python
+numpy
+google-cloud-storage
+h5py
